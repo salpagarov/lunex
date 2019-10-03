@@ -1,17 +1,18 @@
 # DBI
+
 Простой и быстрый интерфейс к базам данных SQL
 
-# Версия
+## Версия
 
 Этот документ описывает версию 0.1
 
-# Пример использования
+## Пример использования
 
 ````lua
 local db = require "DBI" ({
   driver = "MySQL", -- имя файла DBD
   connection = {    -- настройки подключения к серверу базы данных
-  hostname = "localhost", database = "lunex", username = "user", password = "p@ssw0rd", codepage = "utf8"
+  	hostname = "localhost", database = "lunex", username = "user", password = "p@ssw0rd", codepage = "utf8"
   },
   scheme = {  -- описание таблиц, типов данных и реляционных связей базы данных        
     user  = {               
@@ -28,6 +29,7 @@ for _,u in pairs(users) do
 end
 ````
 ## Драйвер базы данных (DBD)
+
 Файл с таблицей, содержащей функции `query`, `state` и `fetch`. 
 Реализация этих функций зависит от базы данных и используемых низкоуровневых библиотек.
 

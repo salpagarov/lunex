@@ -1,23 +1,8 @@
-local db = require "DBI" ({
-  driver = "echo",
-  connection = {
-    hostname = "localhost", database = "lunex", username = "user", password = "p@ssw0rd", codepage = "utf8"
-  },
-  scheme = {
-    user  = {
-      id = "number", name = "string", password = "string", group = "group:id"
-    },
-    group = {
-      id = "number", name = "string"
-    },
-    doc = {
-      id = "number", name = "string", owner = "user:id"
-    },
-    diff = {
-      id = "number", doc = "doc:id", user = "user:id", offset = "number", delete = "number", insert = "string", date = "datetime"
-    }
-  }
-})
+local scheme = require "scheme",
+local driver = require "echo",
+local connection = require "connection"
+
+local db = require "DBI" ({scheme = scheme, driver = driver, connection = connection})
 
 
 db.diff:limit(10):offset(5):get({user = {name = "root", password = "p@ssw0rd", group = {name = "Admins"}}})

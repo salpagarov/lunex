@@ -141,7 +141,7 @@ return function (config)
   local params = {}
   
   local scheme = config.scheme
-  local driver = require('DBI-'..config.driver)(config.connection)
+  local driver = require('DBI.driver.'..config.driver)(config.connection)
   
   for name,_ in pairs(config.scheme) do
     DB[name] = {}

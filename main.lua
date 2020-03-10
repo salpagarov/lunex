@@ -8,19 +8,78 @@ local db = require "DBI" ({
       id = "number", x = "number", y = "number", z = "number"
     },
     system = {
-      name = "string", position = "position:id"
+      id = "number", name = "string", position = "position:id"
     },
     star = {
-      name = "string", position = "position:id", system = "system:name"
+      id = "number", name = "string", position = "position:id", system = "system:id"
     },
     asteroid = {
-      name = "string", position = "position:id", star = "star:name"
+      id = "number", name = "string", position = "position:id", system = "system:id"
     },
     planet = {
-      name = "string", position = "position:id", star = "star:name"
+      id = "number", name = "string", position = "position:id", system = "system:id"
     },
     satelite = {
-      name = "string", position = "position:id", planet = "planet:name"
+      id = "number", name = "string", position = "position:id", planet = "planet:id"
     }
   }
 })
+
+data = {
+  system = {
+    {
+      name = "Solar system",
+      position = {
+        x = 0, y = 0, z = 0
+      },
+      star = {
+        {
+          name = "Sol",
+          position = {
+            x = 0, y = 0, z = 0
+          }
+        }
+      },
+      planet = {
+        {
+          name = "Earth",
+          position = {
+            x = 0, y = 0, z = 0
+          },
+          satellite = {
+            {
+              name = "Moon",
+              position = {
+                x = 0, y = 0, z = 0
+              }
+            }
+          }
+        },
+        {
+          name = "Mars",
+          position = {
+            x = 0, y = 0, z = 0
+          },
+          satellite = {
+            {
+              name = "Phobos",
+              position = {
+                x = 0, y = 0, z = 0
+              }
+            },
+            {
+              name = "Deimos",
+              position = {
+                x = 0, y = 0, z = 0
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+-- db:put (data)
+
+moonbaseA = db.satelite:get({planet = {name = "Earth", system = {name = "Solar System"}}})

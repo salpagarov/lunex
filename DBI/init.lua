@@ -1,24 +1,9 @@
-require "DBI.escape"
-require "DBI.enquote"
-require "DBI.enstructurar"
+require "DBI.utils"
 require "DBI.inline"
-require "DBI.prepare"
-require "DBI.add"
-require "DBI.get"
-require "DBI.put"
-require "DBI.del"
-require "DBI.where"
-require "DBI.limit"
-require "DBI.offset"
 
 local DBI = {
-  add = add,
-  get = get,
-  put = put,
-  del = del,
-  where = where,
-  limit = limit,
-  offset = offset
+  add = require "DBI.add", get = require "DBI.get", put = require "DBI.put", del = require "DBI.del",
+  where  = require "DBI.where", limit  = require "DBI.limit", offset = require "DBI.offset"
 }
 
 return function (config)

@@ -1,4 +1,4 @@
-function add (self,row)
+return function (self,row)
   local COLs,VALs = {},{}
   for k,v in pairs(row) do
     if self.scheme[self.name][k] then

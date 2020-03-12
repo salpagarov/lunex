@@ -1,4 +1,4 @@
-function where (self,row)
+return function (self,row)
   self.params.where = {}
   for k,v in pairs(row) do
     if self.scheme[self.name][k] then

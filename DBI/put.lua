@@ -1,4 +1,4 @@
-function put (self,row) 
+return function (self,row) 
   local EXPRs = {}
   for k,v in pairs(row) do
     if self.scheme[self.name][k] == 'number' then table.insert(EXPRs,k..' = '..v) end

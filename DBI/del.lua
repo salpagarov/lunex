@@ -1,4 +1,4 @@
-function del (self,row)
+return function (self,row)
   row = row or {}
   local where = {}
   for k,v in pairs (row) do

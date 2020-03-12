@@ -1,3 +1,14 @@
+function enquote (str) 
+  return "'"..escape(str).."'" 
+end
+
+function escape (str)
+  for k,v in pairs ({['\n'] = '\\n',["\'"] = "\\'",['\"'] = '\\"',['%%'] = '\\%%'}) do 
+    str = string.gsub(str,k,v) 
+  end
+  return str
+end
+
 function enstructurar (raw,prefix)
   prefix = prefix or ''
   local row,name,related = {},nil,nil

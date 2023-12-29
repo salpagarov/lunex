@@ -12,7 +12,11 @@
 local db = require "DBI" ({
   driver = "MySQL", -- имя файла DBD
   connection = {    -- настройки подключения к серверу базы данных
-  	hostname = "localhost", database = "lunex", username = "user", password = "p@ssw0rd", codepage = "utf8"
+  	hostname = "localhost",
+    database = "lunex",
+    username = "user",
+    password = "p@ssw0rd",
+    codepage = "utf8"
   },
   scheme = {  -- описание таблиц, типов данных и реляционных связей базы данных        
     user  = {               

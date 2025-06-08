@@ -76,7 +76,7 @@ print (users[1].group.name) --> "Admin"
 ````lua
 db.user:where('name = "root"'):put({password = "r00t"})
 ````
-Конструирует и выполняет SQL-конструкцию UPDATE.
+Формирует и выполняет SQL-конструкцию UPDATE.
 
 **Без указания `where` изменения будут выполнены для всех записей таблицы.**
 
@@ -86,6 +86,6 @@ db.user:where('name = "root"'):put({password = "r00t"})
 db.user:del({group = {name = "Guest"}}) 
 db.user:where('name = "root"'):del()
 ````
-Метод конструирует и выполняет конструкцию DELETE FROM. 
+Формирует и выполняет конструкцию DELETE FROM. 
 
 **Внимание: если передать методу пустую таблицу и не задать :where - будут удалены все записи.**

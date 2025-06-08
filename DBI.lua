@@ -147,16 +147,16 @@ local function init(config)
     DB[name] = {}
     setmetatable(DB[name],{
       __index = function (_,k)
-        if k == "name"   then return name end
+        if k == "name"   then return name   end
         if k == "scheme" then return scheme end
         if k == "driver" then return driver end
         if k == "params" then return params end
-        if k == "get"    then return get end
-        if k == "put"    then return put end
-        if k == "add"    then return add end
-        if k == "del"    then return del end
-        if k == "where"  then return where end
-        if k == "limit"  then return limit end
+        if k == "get"    then return get    end
+        if k == "put"    then return put    end
+        if k == "add"    then return add    end
+        if k == "del"    then return del    end
+        if k == "where"  then return where  end
+        if k == "limit"  then return limit  end
         if k == "offset" then return offset end
       end
     })
